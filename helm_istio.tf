@@ -79,12 +79,7 @@ resource "helm_release" "istio_ingress" {
 
     set {
         name    = "gateways.istio-ingressgateway.type"
-        value   = "NodePort"
-    }
-
-    set {
-        name    = "gateways.istio-ingressgateway.type"
-        value   = "NodePort"
+        value   = "LoadBalancer"  # def. is "NodePort"
     }
 
     set {
